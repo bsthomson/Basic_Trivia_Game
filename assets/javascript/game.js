@@ -1,14 +1,33 @@
 $(document).ready(function() {
+    // amount of time
     var count = 60;
+    // timer counter
     var counter=setInterval(timer, 1000);
     var scoreScreen = function() {
         clearTimeout(counter);
         $("#submit").empty();
         var correctAnswers = 0;
-        if (document.querySelector('[value="1"]:checked') == true){
+        // makes sure right answers are selected
+        if (document.getElementById('inlineRadior').checked) {
+           correctAnswers++;
+        };
+        if (document.getElementById('inlineRadio2r').checked) {
             correctAnswers++;
         };
-        // I'm trying cycle through all selected radio inputs and turn them into numbers while putting them in an array and adding them up but I don't think I've stumbled onto the correct solution yet.
+        if (document.getElementById('inlineRadio3r').checked) {
+            correctAnswers++;
+        };
+        if (document.getElementById('inlineRadio4r').checked) {
+            correctAnswers++;
+        };
+        if (document.getElementById('inlineRadio5r').checked) {
+            correctAnswers++;
+        };
+        if (document.getElementById('inlineRadio6r').checked) {
+            correctAnswers++;
+        };
+        console.log(correctAnswers);
+        // unchecks radio circles
         $(".form-check-input").prop('checked', false);
         $(".screen").text("You scored " + correctAnswers + " out of 6!")
         $(".screen").append("<button type='button' class='btn btn-success' id='tryagain'>Try Again</button>");    
@@ -26,7 +45,6 @@ $(document).ready(function() {
 
     
     function timer() {
-        clearTimeout(counter);
         count=count-1
         if (count <=0)
         {
