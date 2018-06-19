@@ -55,7 +55,7 @@ $(document).ready(function() {
         $("#timer").text(count+ " secs")
     }
     // Submit button doesn't work second time
-    $("#submit").on("click", scoreScreen);
+    $(document.body).on("click", "#submit", scoreScreen);
 
     
 });
